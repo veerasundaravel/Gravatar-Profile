@@ -1,0 +1,12 @@
+=== 1.0 / 2010-11-29
+
+* Initial Release.
+
+=== 1.0.1 / 2010-11-30
+
+* Correction in README File.
+
+=== 1.1.0 / 2010-11-30
+
+* Correction in README File.
+* Getting profile information from XML formatted profile url is hardcoded.

@@ -1,0 +1,58 @@
+= Author
+Veerasundaravel Thirugnanasundaram <veerasundaravel@gmail.com>
+
+http://veerasundaravel.wordpress.com
+
+= Synopsis
+gravatar_profile is a Ruby Wrapper for getting GRAVATAR[http://gravatar.com] avatars and profile informations.
+
+By passing the user email you can get the gravatar image, gravatar profile url and as well as profile informations also.
+
+
+= Usage
+Using the GravatarProfile library is fairly simple and straight-forward.  The base
+class most of you will be using is the GravatarProfile class.
+
+=== Installation
+  sudo gem install gravatar_profile
+
+===Getting Gravatar image
+
+  gravatar = GravatarProfile.new("your-email-address")
+
+  gp.gravatar_url
+
+  >> "http://gravatar.com/avatar/6fa14cea01672568042121f81c33d5fbb.png"
+
+
+=== Getting Gravatar Profile Url
+
+  gp = GravatarProfile.new("your-email-address")
+
+  gp.gravatar_profile_url
+
+  >> "http://gravatar.com/6fa14cea01672568042121f81c33d5fbb"
+
+
+  gp = GravatarProfile.new("your-email-address"")
+
+  gp.gravatar_profile_url(:filetype => :xml)
+
+  >> "http://gravatar.com/6fa14cea01672568042121f81c33d5fbb"
+
+
+=== Accessing profile informations
+Accessing profile information is much simpler, just you need to call the function get_profile_info and it will return entire information of the gravatar user as a hash.
+
+  gp = GravatarProfile.new("some-email-address")
+
+
+  #It will return a collection of profile information as Hash from gravatar.
+
+  gp.get_profile_info
+
+  #If your server need to use proxyy means specify the proxy details as follows.
+
+  gp.get_profile_info({:proxy_host => 'www.some-proxy.com', :proxy_port=>8000})
+
+  >> {"name"=>[{"givenName"=>["User-GivenName"], "familyName"=>["FamilyName"], "formatted"=>["User-GivenName Lastname"]}], "requestHash"=>["6fa14cea067256804121f81c33d5fbb"], "preferredUsername"=>["user-givenname"], "displayName"=>["user-givenname"], "thumbnailUrl"=>["http://2.gravatar.com/avatar/6fadss14cea0167256804121f81c3d5fbb"], "hash"=>["6fadss14cea0167256804121f81c33d5fbb"], "urls"=>[{"value"=>["http://in.linkedin.com/pub/abced/8/11b/15"]}, {"title"=>["Ruby on Rails Weblog"], "value"=["http://user-givenname.wordpress.com"]}, {"title"=>["Twitter Account"], "value"=>["http://twitter.com/user-givenname"]}], "ims"=>[{"type"=>["yahoo"], "value"=>["some-name2003"]} {"type"=>["gtalk"], "value"=>["some-name2003"]}, {"type"=>["skype"], "value"=>["user-givenname"]}], "emails"=>[{"primary"=>["true"], "value"=>["some-name2003@gmail.com"]}], "photos">[{"type"=>["thumbnail"], "value"=>["http://2.gravatar.com/avatar/6fadss14cea0167256804121f81c33d5fbb"]}, {"value"=>["http://2.gravatar.com/userimage/5146707/c647651ea2579f4900cc05f766a3b23"]}], "id"=>["5146707"], "accounts"=>[{"shortname"=>["facebook"], "url"=>["http://www.facebook.com/profile.php?id=5523354779"], "username"=>["facebook.com"], "domain"=>[facebook.com"], "display"=>["facebook.com"], "verified"=>["true"]}, {"shortname"=>["linkedin"], "url"=>["http://www.linkedin.com/in/user-givenname"], "username"=>["usernameel"], "domain"=>["linkedin.com"], "display"=>["user-givenname"], "verified"=>["true"]}, {"shortname"=>["twitter"], "url"=>["http://twitter.com/user-givenname"], "username"=>["eerasundaravel"], "domain"=>["twitter.com"], "display"=>["@user-givenname"], "verified"=>["true"]}, {"shortname"=>["wordpress"], "url"=>["http://user-givenname.wordpress.com/", "username"=>["user-givenname.wordpress.com"], "domain"=>["user-givenname.wordpress.com"], "display"=>["user-givenname.wordpress.com"], "verified"=>["true"]}], "currentLocaton"=>["Location1, Country"], "aboutMe"=>["About me text goes here"], "phoneNumbers"=>[{"type"=>["mobile"], "value"=>["9894873774"]}], "profileUrl"=>["http://gravatar.com/user-givenname"]}
