@@ -2,15 +2,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gravatar_profile}
-  s.version = "1.1.0"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Veerasundaravel Thirugnanasundaram"]
-  s.date = %q{2010-11-29}
+  s.date = %q{2010-09-07}
   s.description = %q{gravatar_profile is a Ruby Wrapper for getting GRAVATAR[http://gravatar.com] avatars and profile informations.}
   s.email = ["veerasundaravel@gmail.com"]
   s.extra_rdoc_files = ["CHANGELOG.rdoc", "README.rdoc", ]
-  s.files = ["CHANGELOG.rdoc", "README.rdoc", "gravatar_profile.gemspec", "lib/gravatar_profile.rb"]
+  s.files = ["CHANGELOG.rdoc", "README.rdoc", "MIT-LICENSE", "gravatar_profile.gemspec", "lib/gravatar_profile.rb"]
   s.homepage = %q{http://veerasundaravel.wordpress.com}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
